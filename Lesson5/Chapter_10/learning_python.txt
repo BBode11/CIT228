@@ -1,0 +1,3 @@
+In python you create functions.
+In python you can also create dictionaires and lists.
+In python you can use many different types of loops and statements.

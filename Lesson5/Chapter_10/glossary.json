@@ -1,0 +1,12 @@
+{
+    "Boolean": "True or false variables.",
+    "Break": "Used to exit a while loop.",
+    "Comments": "Comments in python start with a #.",
+    "Conditionals": "An expression that can be evaluated.",
+    "Len()": "Gives the integer value of the number of characters in a string.",
+    "Lists": "A collection of items in a particular order.",
+    "Print": "Prints out what is inside of the parentheses.",
+    "String": "Series of characters.",
+    "String Concatentation": "Adding two strings together.",
+    "Tuples": "List of items that do not change."
+}
