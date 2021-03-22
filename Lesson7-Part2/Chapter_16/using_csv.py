@@ -1,0 +1,35 @@
+import csv
+from datetime import datetime
+
+from matplotlib import pyplot as plt
+
+filename = 'Chapter_16/Data/gr.csv'
+with open(filename) as f:
+    reader = csv.reader(f)
+    header_row = next(reader)
+
+    # Get dates, and high and low temperatures from this file.
+    dates, highs, lows = [], [], []
+    for row in reader:
+        current_date = datetime.strptime(row[2], '%Y-%m-%d')
+        high = int(row[3])
+        low = int(row[4])
+        dates.append(current_date)
+        highs.append(high)
+        lows.append(low)
+
+# Plot the high and low temperatures.
+plt.style.use('seaborn')
+fig, ax = plt.subplots()
+ax.scatter(dates, highs, c='red', alpha=0.5)
+ax.scatter(dates, lows, c='blue', alpha=0.5)
+plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+
+# Format plot.
+plt.title("Daily High and Low Temperatures for Grand Rapids", fontsize=20)
+plt.xlabel('', fontsize=16)
+fig.autofmt_xdate()
+plt.ylabel("Temperature (F)", fontsize=16)
+plt.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()
